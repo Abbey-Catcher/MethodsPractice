@@ -22,7 +22,9 @@ namespace MethodsPractice
             /// TODO - Place method calls here
 
             PrintSignature();
-
+            RectangleArea();
+            Add();
+            CircleArea();
         }
 
         /// 1. Print a signature to the screen
@@ -39,22 +41,45 @@ namespace MethodsPractice
 
         public void RectangleArea()
         {
+            int width = 5;
+            int length = 7;
+            int area = width * length;
 
+            q2Output.Text = $"The area of a {width} x {length} rectangle is {area} units squared.";
         }
 
         /// 3. Create a method to get numbers from q3Num1Input and q3Num2Input,
         /// add them together, and then display output as follows:
         /// 
-        /// 5 + 4 = 9 
+        /// 5 + 4 = 9
 
+        public void Add()
+        {
+            //inputs
+            int num1 = Convert.ToInt32(q3Num1Input.Text);
+            int num2 = Convert.ToInt32(q3Num2Input.Text);
 
+            //processing
+            int sum = num1 + num2;
+
+            //outputs
+            q3Output.Text = $"{num1} + {num2} = {sum}";
+        }
         
         /// 4. Create a method to calculate the area of a circle based on  
         /// the radius entered in radiusInput, then display output as follows:
         /// 
         /// The area of a circle with radius of 4 is 50.24 units squared
 
+        public void CircleArea()
+        {
+            //PI * R * R
+            double pi = 3.14;
+            double radius = Convert.ToDouble(radiusInput.Text);
+            double area = radius * radius * pi;
 
+            q4Output.Text = $"The area of a cricle with a radius of {radius} is {area} units squared.";
+        }
 
         /// 5. 3U Only - Create a method that will determine and display
         /// the maximum of 3 values entered into q5Num1Input, q5Num2Input,
@@ -63,6 +88,27 @@ namespace MethodsPractice
         /// Inputs: 5, 7, 2
         /// he largest value is 7
 
+        public void Question5()
+        {
+            int num1 = Convert.ToInt32(q5Num1Input.Text);
+            int num2 = Convert.ToInt32(q5Num2Input.Text);
+            int num3 = Convert.ToInt32(q5Num3Input.Text);
+            int max = 0;
 
+            if (num1 > num2 && num1 > num3)
+            {
+                max = num1;
+            }
+            else if (num2 > num1 && num2 > num3)
+            {
+                max = num2;
+            }
+            else
+            {
+                max = num3;
+            }
+
+            q5Output.Text = $"The max value is {max}";
+        }
     }
 }
